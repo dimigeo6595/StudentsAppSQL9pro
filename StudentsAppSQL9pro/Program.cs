@@ -1,3 +1,5 @@
+using StudentsAppSQL9pro.Core;
+
 namespace StudentsAppSQL9pro
 {
     public class Program
@@ -8,6 +10,9 @@ namespace StudentsAppSQL9pro
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+
+            //Creates an instance per HTTP request 
+            builder.Services.AddScoped<DBHelper>();
 
             var app = builder.Build();
 
